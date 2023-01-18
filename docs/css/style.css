@@ -7,14 +7,16 @@
   margin-top: 0;
 }
 
-/*.list {
+/*
+.list {
   display: flex;
   flex-grow: 0;
   flex-shrink: 1;
   flex-direction: row;
   justify-content: flex-start;
   flex-wrap: wrap;
-}*/
+}
+*/
 
 .panel-info {
     display: block;
@@ -23,6 +25,7 @@
     text-align: left;
 
 }
+
 .panel-info article {
   display: inline-block;
   position: relative;
@@ -64,6 +67,7 @@
 h3 {margin: 0 auto;}
 
 .platform, .annotation, .search, .terminology, .transformation { padding: 2rem; vertical-align:top;}
+
 .panel-body-1 {padding: 2rem;}
 
 .rounded {
