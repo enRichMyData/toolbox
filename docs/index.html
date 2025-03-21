@@ -1,656 +1,663 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <title>enRichMyData Toolbox</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" type="image/png" href="img/enrichmydata_icon.png" />
-</head>
-
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>enRichMyData Toolbox</title>
+    
+    <!-- Basic favicon -->
+    <link rel="icon" type="image/png" href="img/enrichmydata_icon.png">
+    
+    <!-- Apple Touch Icon (for iOS devices) -->
+    <link rel="apple-touch-icon" href="img/enrichmydata_icon.png">
+    
+    <!-- For modern browsers that support SVG -->
+    <link rel="icon" type="image/svg+xml" href="img/enrichmydata_icon.png">
+    
+    <!-- For IE and older browsers -->
+    <link rel="shortcut icon" href="img/enrichmydata_icon.png">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Lightweight icons from Font Awesome (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
 <body>
+  <header>
+    <div class="header-top">
+      <div class="container">
+        <div class="logo-container">
+          <img src="img/enrichmydata_logo_transparent.png" alt="enRichMyData Logo" class="logo">
+        </div>
+        <h1>enRichMyData Toolbox</h1>
+      </div>
+    </div>
+    <div class="header-bottom">
+      <div class="container">
+        <nav>
+          <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#discoverr">DiscoverR</a></li>
+            <li><a href="#wrappr">WrappR</a></li>
+            <li><a href="#cleanr">CleanR</a></li>
+            <li><a href="#linkr">LinkR</a></li>
+            <li><a href="#structr">StructR</a></li>
+            <li><a href="#infrastructure">Infrastructure Services</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
 
-  <div class="rounded">
-    <table>
-      <tr>
-        <td style="width:30%">
-          <div class="logo logo-image">
-            <div class="logo-image">
-              <a href="https://enrichmydata.eu/" title="enRichMyData"><img src="img/enrichmydata_logo.png"
-                  alt="enRichMyData" height="100" style="border-radius: 10px;"></a>
-            </div>
+  <main class="container">
+    <section id="overview" class="overview">
+      <h2><span>Overview</span></h2>
+      <div class="architecture-image">
+        <a href="img/enrichmydata_toolbox_1.png" target="_blank">
+          <img src="img/enrichmydata_toolbox_1.png" alt="enRichMyData Toolbox Architecture">
+        </a>
+      </div>
+      
+      <div class="overview-text">
+        <p>enRichMyData delivers capabilities as a set of interoperable tools and services forming the <strong>enRichMyData Toolbox</strong>. At the center is the concept of a <strong>data enrichment pipeline</strong> that receives <strong>input data</strong> to be enriched and generates <strong>enriched data</strong>.</p>
+        
+        <div class="features">
+          <div class="feature-card">
+            <i class="fas fa-tools"></i>
+            <h3>Functional Tools</h3>
+            <p>A set of tools providing functional capabilities needed to support the design of pipelines.</p>
           </div>
-        </td>
-        <td style="width:70%">
-          <p style="font-size:300%; color:white">enRichMyData Toolbox</p>
-        </td>
-      </tr>
-    </table>
-  </div>
-
-  <div class="col-md-14">
-
-    <div style="margin-bottom: 1em;"></div>
-
-    <section class="panel panel-info">
-      <!-- <div class="panel-heading">
-        <h2>enRichMyData Toolbox</h2>
-      </div> -->
-      <div class="panel-body-1">
-
-        <div>
-          <p><a href="img/enrichmydata_toolbox.png" target="_blank"><img src="img/enrichmydata_toolbox.png"
-                width="90%"></a>
-          </p>
-        </div>
-
-        <div class="description">
-          <p>enRichMyData will deliver its capabilities as a set of interoperable tools and services that will form
-            the <b>enRichMyData Toolbox</b>. The figure above provides the conceptual architecture of the toolbox. At
-            the center lays the notion of a <b>data enrichment pipeline</b> that receives <b>input data</b> to be
-            enriched and data to enrich with (left hand side), and generates <b>enriched data</b> (right hand side). The
-            enrichment process is supported by:
-          </p>
-          <p>
-            <li>a set of <b>tools</b> (top of the figure) that provide functional capabilities needed to
-              support the design of pipelines; and</li>
-          </p>
-          <p>
-            <li>a set of <b>infrastructure services</b> (bottom of the figure) that provide non-functional
-              capabilities needed to support the effective and efficient deployment and execution of pipelines.</li>
-          </p>
-          <br>
-          <p>enRichMyData, being a toolbox with <b>loosely coupled but interoperable tools and services</b> is meant
-            to handle complex data enrichment scenarios, where <b>tools and services can be combined and customized as
-              needed</b>. Each main tool or infrastructure service is supported by at least one software component.
-            Below we give a short description of the available components for each tool and service infrastructure
-            category, including references to any GitHub repositories.</p>
-          <br>
-        </div>
-
-        <hr>
-
-        <div style="border-left: 6px solid #008000; margin-left: -3px; top: 0;">
-          <div class="list">
-            <p
-              style="text-orientation: upright; color: #008000; margin-left: 10px; font-weight:bold; font-size: xx-large; font-weight: 500;">
-              DiscoverR</p>
-            <div class="description">
-              <p><b>DiscoverR</b> assists users in searching datasets, ontologies, and enrichment services and
-                provides
-                insights on their content to support their use in enrichment pipeline. The user can search for
-                keywords over descriptions of catalogued datasets/ontologies/services (particular features such as
-                metadata, formats, ontology terms, quality features), or browse specific descriptions from a visual
-                interface. Catalogued datasets/services/ontologies encompass well-established knowledge bases (e.g.,
-                WikiData, DBpedia, Schema.org) and data used in and created with pipelines. DiscoverR provides
-                semantic data profiling techniques to enrich basic descriptions based on metadata (e.g., DCAT) with
-                ontology usage patterns (e.g., connections between concepts) and statistics (e.g., frequency,
-                cardinality, etc.). These profiling techniques are applied to semantic sources, as well as “non
-                semantic” sources, which are profiled by inferring the semantics of their schema exploiting annotation
-                services of the LinkR component. Profiling is compliant with and boosts FAIR principles.</p>
-            </div>
-            <article class="item">
-              <h4 class="title">ABSTAT</h4>
-              <div class="description">
-                <p>Scalable data profiling tool for RDF data (knowledge graphs) based on: 1) pattern extraction (class
-                  - predicate - class), possibly with the support of the data ontology; 2) calculation of different
-                  statistics. Access to the profiles by 1) full-text search over patterns; 2) browsing; 3) APIs
-                </p>
-                <a href="http://abstat.disco.unimib.it" target="_blank"><img src="img/page_icon.png" width="24"
-                    alt="Home" class="ico"></a>
-                <!--<a href="https://bitbucket.org/disco_unimib/abstat/src/master/" target="_blank"><img
-                      src="img/document_icon.png" width="24" alt="Document" class="ico"></a>-->
-                <a href="https://bitbucket.org/disco_unimib/abstat/src/master/" target="_blank"><img
-                    src="img/github_icon.png" width="24" alt="GitHub" class="ico"></a>
-                <a href="https://opensource.org/licenses/GPL-3.0" target="_blank"><img
-                    src="https://img.shields.io/badge/license-GPL3.0-yellow" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-6-yellow" alt="TRL"></a>
-              </div>
-            </article>
-            <article class="item">
-              <h4 class="title">SemTUI</h4>
-              <div class="description">
-                <p>Table reconciliation and extension service: Semantic annotation of tabular data by external
-                  services. Entity reconciliation and linking. Table extension extracting data from external datasets
-                  and Knowledge Graphs.</p>
-                <br>
-                <a href="https://i2tunimib.github.io/I2T-docs/" target="_blank"><img src="img/page_icon.png" width="24"
-                    alt="Home" class="ico"></a>
-                <a href="https://i2tunimib.github.io/I2T-docs/" target="_blank"><img src="img/document_icon.png"
-                    width="24" alt="Document" class="ico"></a>
-                <a href="https://github.com/I2Tunimib" target="_blank"><img src="img/github_icon.png" width="24"
-                    alt="GitHub" class="ico"></a>
-                <a href="https://opensource.org/licenses/Apache-2.0" target="_blank"><img
-                  src="https://img.shields.io/badge/license-Apache2.0-blue" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                target="_blank"><img src="https://img.shields.io/badge/TRL-4-yellow" alt="TRL"></a>
-              </div>
-            </article>
+          
+          <div class="feature-card">
+            <i class="fas fa-server"></i>
+            <h3>Infrastructure Services</h3>
+            <p>Services providing non-functional capabilities needed to support the effective deployment and execution of pipelines.</p>
           </div>
         </div>
-
-        <hr>
-
-        <div style="border-left: 6px solid #008000; margin-left: -3px; top: 0;">
-          <div class="list">
-            <p
-              style="text-orientation: upright; color: #008000; margin-left: 10px; font-weight:bold; font-size: xx-large; font-weight: 500;">
-              WrappR</p>
-            <div class="description">
-              <p><b>WrappR</b> provides data access using a virtual semantic layer and ensures secure access. WrappR
-                is delivered as a semantic graph database with efficient reasoning, cluster and external index
-                synchronization support. It provides a variety of different type of APIs and access methods as well as
-                different types of data federation and virtualization. Through semantic data access and integration,
-                WrappR provides a practical, robust and versatile tool to improve access to data.</p>
-            </div>
-            <article class="item">
-              <h4 class="title">Ontotext GraphDB</h4>
-              <div class="description">
-                <p>Ontotext GraphDB is a highly efficient and robust graph database with RDF and SPARQL support. It
-                  supports a number of plugins and connectors such as MongoDB connector for JSON store access, JDBC for
-                  exposing RDF as a virtual relational DB, ONTOP for virtual sparql access.</p>
-                <a href="https://graphdb.ontotext.com/" target="_blank"><img src="img/page_icon.png" width="24"
-                    alt="Home" class="ico"></a>
-                <a href="https://graphdb.ontotext.com/documentation/10.1/" target="_blank"><img
-                    src="img/document_icon.png" alt="Document" width="24" class="ico"></a>
-                <img src="https://img.shields.io/badge/license-proprietary-red" alt="License">
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-8-blue" alt="TRL"></a>
-              </div>
-            </article>
-            <article class="item">
-              <h4 class="title">Ontotext Semantic Objects</h4>
-              <div class="description">
-                <p>The Semantic Objects are a declaratively configurable service for querying and mutating knowledge
-                  graphs which automatically transpiles GraphQL queries and mutations into optimized SPARQL
-                  queries.</p>
-                <br>
-                <a href="https://platform.ontotext.com/semantic-objects/" target="_blank"><img src="img/page_icon.png"
-                    width="24" alt="Home" class="ico"></a>
-                <a href="https://platform.ontotext.com/semantic-objects/" target="_blank"><img
-                    src="img/document_icon.png" alt="Document" width="24" class="ico"></a>
-                <img src="https://img.shields.io/badge/license-proprietary-red" alt="License">
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-7-blue" alt="TRL"></a>
-              </div>
-            </article>
-            <article class="item">
-              <h4 class="title">Ontotext Semantic Search</h4>
-              <div class="description">
-                <p>The Semantic Search provides a way to index the data from GraphDB in Elasticsearch and run queries
-                  against it.</p>
-                <br><br><br>
-                <a href="https://platform.ontotext.com/semantic-search/" target="_blank"><img src="img/page_icon.png"
-                    width="24" alt="Home" class="ico"></a>
-                <a href="https://platform.ontotext.com/semantic-search/" target="_blank"><img
-                    src="img/document_icon.png" alt="Document" width="24" class="ico"></a>
-                <img src="https://img.shields.io/badge/license-proprietary-red" alt="License">
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-7-blue" alt="TRL"></a>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <hr>
-
-        <div style="border-left: 6px solid #008000; margin-left: -3px; top: 0;">
-          <div class="list">
-            <p
-              style="text-orientation: upright; color: #008000; margin-left: 10px; font-weight:bold; font-size: xx-large; font-weight: 500;">
-              CleanR</p>
-            <div class="description">
-              <p><b>CleanR</b> supports the specification of data manipulation transformations, including data
-                cleaning operations and the generation of knowledge graphs from various data formats. Users specify
-                transformations interactively from a user interface, while specifications will be stored in a
-                machine-readable format to be replicated and reused. CleanR provides a broad set of AI-enabled data
-                transformations (e.g., ML-based recommendations) and integrates them with generic linking and
-                extension functionalities provided by the ResourcR. CleanR enables data cleaning and enrichment
-                operations to be shared (as asset, text or executable), managed and, if needed, incorporated as steps
-                in the data pipelines in the ScalR component.</p>
-            </div>
-            <article class="item">
-              <h4 class="title">Ontotext Refine</h4>
-              <div class="description">
-                <p>Ontotext Refine (OntoRefine) is a free application for automating the conversion of messy string data
-                  into a knowledge graph.</p>
-                <br><br>
-                <a href="https://www.ontotext.com/products/ontotext-refine/" target="_blank"><img
-                    src="img/page_icon.png" width="24" alt="Home" class="ico"></a>
-                <a href="https://platform.ontotext.com/ontorefine/" target="_blank"><img src="img/document_icon.png"
-                    width="24" alt="Document" class="ico"></a>
-                <img src="https://img.shields.io/badge/license-proprietary-red" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-8-blue" alt="TRL"></a>
-              </div>
-            </article>
-            <article class="item">
-              <h4 class="title">RMLMapper</h4>
-              <div class="description">
-                <p>RMLMapper executes RDF Mapping Language (RML) rules (<a href="https://rml.io/specs/rml/" target="_blank">https://rml.io/specs/rml/</a>) to generate Linked Data from multiple originally (semi-)structured data sources.</p>
-                <br><br>
-                <a href="https://github.com/RMLio/rmlmapper-java" target="_blank"><img
-                    src="img/page_icon.png" width="24" alt="Home" class="ico"></a>
-                <a href="https://github.com/RMLio/rmlmapper-java" target="_blank"><img src="img/document_icon.png"
-                    width="24" alt="Document" class="ico"></a>
-                <a href="https://github.com/RMLio/rmlmapper-java" target="_blank"><img src="img/github_icon.png" width="24"
-                  alt="GitHub" class="ico"></a>
-                <a href="https://opensource.org/licenses/MIT" target="_blank"><img
-                  src="https://img.shields.io/badge/license-MIT-blue" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-7-blue" alt="TRL"></a>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <hr>
-
-        <div style="border-left: 6px solid #008000; margin-left: -3px; top: 0;">
-          <div class="list">
-            <p
-              style="text-orientation: upright; color: #008000; margin-left: 10px; font-weight:bold; font-size: xx-large; font-weight: 500;">
-              LinkR</p>
-            <div class="description">
-              <p><b>LinkR</b> provides capabilities for semantic annotation of structured and semi-structured data
-                using reference knowledge graphs and category schemes. Annotations consist of links from elements of the
-                input data to elements of well-established knowledge bases and ontologies (e.g., WikiData, DBpedia,
-                and Geonames), or user defined knowledge graphs made available through the ResourcR (including
-                schema-level annotations ontology terms, and instance-level annotations with identifiers). LinkR
-                supports annotations through intelligent ML algorithms recommending annotations and a
-                human-in-the-loop approach enabling fine-tuning the recommendations algorithms and revision of the
-                results, ensure high-quality annotations while minimizing the users' effort even on very large data
-                volumes. Annotations will be converted into data transformations, to be used as part of enrichment
-                pipelines.</p>
-            </div>
-            <article class="item">
-              <h4 class="title">SemTUI</h4>
-              <div class="description">
-                <p>Table reconciliation and extension services: semantic annotation of tabular data using external
-                  services. The UI supports entity linking and schema annotations to support full-fledge
-                  mapping, and specification of data extension operations using external datasets and Knowledge Graphs.
-                </p>
-                <a href="https://i2tunimib.github.io/I2T-docs/" target="_blank"><img src="img/page_icon.png" width="24"
-                    alt="Home" class=" ico"></a>
-                <a href="https://i2tunimib.github.io/I2T-docs/" target="_blank"><img src="img/document_icon.png"
-                    width="24" alt="Document" class=" ico"></a>
-                <a href="https://github.com/I2Tunimib" target="_blank"><img src="img/github_icon.png" width="24"
-                    alt="GitHub" class="ico"></a>
-                <a href="https://opensource.org/licenses/Apache-2.0" target="_blank"><img
-                  src="https://img.shields.io/badge/license-Apache2.0-blue" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                target="_blank"><img src="https://img.shields.io/badge/TRL-4-yellow" alt="TRL"></a>
-              </div>
-            </article>
-            <article class="item">
-              <h4 class="title">selBat</h4>
-              <div class="description">
-                <p>Table interpretation service: Semantic annotation of tabular data by an unsupervised approach based
-                  on heuristic. Schema types and properties, entity reconciliation and linking. Target Knowledge Graph:
-                  Wikidata.</p>
-                <br>
-                <a href="https://bitbucket.org/disco_unimib/selbat/src/master/" target="_blank"><img
-                    src="img/page_icon.png" width="24" alt="Home" class=" ico"></a>
-                <a href="https://bitbucket.org/disco_unimib/selbat/src/master/" target="_blank"><img
-                    src="img/document_icon.png" width="24" alt="Document" class=" ico"></a>
-                <a href="https://bitbucket.org/disco_unimib/selbat/src/master/" target="_blank"><img
-                    src="img/github_icon.png" width="24" alt="GitHub" class="ico"></a>
-                <a href="https://opensource.org/licenses/Apache-2.0" target="_blank"><img
-                    src="https://img.shields.io/badge/license-Apache2.0-blue" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-5-yellow" alt="TRL"></a>
-              </div>
-            </article>
-            <article class="item">
-              <h4 class="title">Ontotext Refine</h4>
-              <div class="description">
-                <p>Ontotext Refine (OntoRefine) is a free application for automating the conversion of messy string data
-                  into a knowledge graph. It allows reconciliation against any endpoint supporting the reconcile API
-                  protocol.</p>
-                <br>
-                <a href="https://www.ontotext.com/products/ontotext-refine/" target="_blank"><img
-                    src="img/page_icon.png" width="24" alt="Home" class="ico"></a>
-                <a href="https://platform.ontotext.com/ontorefine/" target="_blank"><img src="img/document_icon.png"
-                    width="24" alt="Document" class="ico"></a>
-                <img src="https://img.shields.io/badge/license-proprietary-red" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-8-blue" alt="TRL"></a>
-              </div>
-            </article>
-            <article class="item">
-              <h4 class="title">Ontotext Reconciliation</h4>
-              <div class="description">
-                <p>Ontotext reconciliation generates a reconciliation API endpoint on top of an RDF knowledge graph.</p>
-                <br><br><br>
-                <a href="https://www.ontotext.com/knowledgehub/videos/kgf21-talks-reconciliation-server-demonstration-against-wikidata/"
-                  target="_blank"><img src="img/page_icon.png" width="24" alt="Home" class="ico"></a>
-                <!--<a href="https://www.ontotext.com/knowledgehub/videos/kgf21-talks-reconciliation-server-demonstration-against-wikidata/" target="_blank"><img src="img/document_icon.png"
-                    width="24" alt="Document" class="ico"></a>-->
-                <img src="https://img.shields.io/badge/license-proprietary-red" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-5-yellow" alt="TRL"></a>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <hr>
-
-        <div style="border-left: 6px solid #008000; margin-left: -3px; top: 0;">
-          <div class="list">
-            <p
-              style="text-orientation: upright; color: #008000; margin-left: 10px; font-weight:bold; font-size: xx-large; font-weight: 500;">
-              StructR</p>
-            <div class="description">
-              <p><b>StructR</b> is the counterpart of LinkR for unstructured data. It generates structured data from
-                the
-                unstructured input text through semantic annotation, linking and extension. The text is processed by
-                linguistic and semantic tools and concept mentions are identified and disambiguated from context.
-                Furthermore, the text is projected into an embedding space by using representation learning. StructR
-                supports a range of different pre-computed embeddings to represent the text and expand the dataset.
-                Extension with custom annotation services is supported through a labeling interface for creating and
-                editing text annotations which can then be used to build new annotation models in a human-in-the-loop
-                fashion.</p>
-            </div>
-            <article class="item">
-              <h4 class="title">Wikifier</h4>
-              <div class="description">
-                <p>The JSI Wikifier is a web service that takes a text document as input and annotates it with links to
-                  relevant Wikipedia concepts (entities).</p>
-                <br><br>
-                <a href="https://wikifier.org/info.html" target="_blank"><img src="img/page_icon.png" width="24"
-                    alt="Home" class="ico"></a>
-                <a href="https://wikifier.org/info.html" target="_blank"><img src="img/document_icon.png" width="24"
-                    alt="Document" class="ico"></a>
-                <img src="https://img.shields.io/badge/license-proprietary-red" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-9-blue" alt="TRL"></a>
-              </div>
-            </article>
-            <article class="item">
-              <h4 class="title">Expert AI Platform Document Analyser</h4>
-              <div class="description">
-                <p>With the Natural Language API's document analysis capabilities, you can perform deep linguistic
-                  analysis, keyphrase extraction, named entity recognition, relation extraction and sentiment analysis.
-                </p>
-                <br>
-                <a href="https://try.expert.ai/document-analysis" target="_blank"><img src="img/page_icon.png"
-                    width="24" alt="Home" class="ico"></a>
-                <a href="https://try.expert.ai/document-analysis" target="_blank"><img src="img/document_icon.png"
-                    width="24" alt="Document" class="ico"></a>
-                <img src="https://img.shields.io/badge/license-proprietary-red" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-9-blue" alt="TRL"></a>
-              </div>
-            </article>
-            <article class="item">
-              <h4 class="title">Event Registry Relation Classifier</h4>
-              <div class="description">
-                <p>The Event Registry Relation Classifier.</p>
-                <br><br><br><br>
-                <a href="https://eventregistry.org/" target="_blank"><img src="img/page_icon.png" width="24" alt="Home"
-                    class="ico"></a>
-                <a href="https://eventregistry.org/" target="_blank"><img src="img/document_icon.png" width="24"
-                    alt="Document" class="ico"></a>
-                <img src="https://img.shields.io/badge/license-proprietary-red" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-9-blue" alt="TRL"></a>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <hr>
-
-        <div style="border-left: 6px solid #008000; margin-left: -3px; top: 0;">
-          <div class="list">
-            <p
-              style="text-orientation: upright; color: #008000; margin-left: 10px; font-weight:bold; font-size: xx-large; font-weight: 500;">
-              ClassifieR</p>
-            <div class="description">
-              <p><b>ClassifiR</b> supports data classification as a service and complements StructR. Whereas StructR
-                identifies properties of parts of the text, ClassifiR labels the documents as a whole. The labels can
-                be part of standard taxonomies, industry classifications, as well as custom sets of labels for which a
-                classifier is built. Custom classification is supported by an interactive graphical interface which
-                allows users to explore a document corpus and create ontologies through clustering, labelling and
-                querying. ClassifiR automates the classification process and exposing it through a common endpoint
-                independent of the classification used.</p>
-            </div>
-            <article class="item">
-              <h4 class="title">InfoMiner</h4>
-              <div class="description">
-                <p>The (semi-)automatic data exploration and topic ontology creation tool.</p>
-                <br><br><br>
-                <a href="https://github.com/Infominer-JSI" target="_blank"><img src="img/page_icon.png" width="24"
-                    alt="Home" class="ico"></a>
-                <a href="https://github.com/Infominer-JSI" target="_blank"><img src="img/document_icon.png" width="24"
-                    alt="Document" class="ico"></a>
-                <a href="https://github.com/Infominer-JSI/infominer-js" target="_blank"><img src="img/github_icon.png"
-                    width="24" alt="GitHub" class="ico"></a>
-                <a href="https://opensource.org/licenses/BSD-2-Clause" target="_blank"><img
-                    src="https://img.shields.io/badge/license-BSD2Clause-blue" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-7-blue" alt="TRL"></a>
-              </div>
-            </article>
-            <article class="item">
-              <h4 class="title">Expert AI Platform Document Classification</h4>
-              <div class="description">
-                <p>Document classification determines what a text is about in terms of categories of a taxonomy.
-                  Available taxonomies are: Iptc Media Topics, GeoTax, Emotional Traits, Behavioral Traits.</p>
-                <br>
-                <a href="https://try.expert.ai/document-classification" target="_blank"><img src="img/page_icon.png"
-                    width="24" alt="Home" class="ico"></a>
-                <a href="https://try.expert.ai/document-classification" target="_blank"><img src="img/document_icon.png"
-                    width="24" alt="Document" class="ico"></a>
-                <img src="https://img.shields.io/badge/license-proprietary-red" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-9-blue" alt="TRL"></a>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <hr>
-
-        <div style="border-left: 6px solid #4400aa; margin-left: -3px; top: 0;">
-          <div class="list">
-            <p
-              style="text-orientation: upright; color: #4400aa; margin-left: 10px; font-weight:bold; font-size: xx-large; font-weight: 500;">
-              ResourcR</p>
-            <div class="description">
-              <p><b>ResourcR</b> provides infrastructure components to support the creation of linking services for a
-                given dataset from a data provider as well as access mechanisms such as search and query. ResourcR
-                enables performant linking and search functionalities with limited effort and expose them as search
-                and linking APIs. The combination of ResourcR and LinkR makes it possible to turn semantic data
-                produced with the toolbox into resources immediately available for reuse.</p>
-            </div>
-            <article class="item">
-              <h4 class="title">LamAPI</h4>
-              <div class="description">
-                <p>Entity search and candidate retrieval. Retrieval of properties associated with entities. Target
-                  Knowledge Graph: Wikidata, DBPedia.</p>
-                <br><br>
-                <a href="https://bitbucket.org/disco_unimib/lamapi/src/master/" target="_blank"><img
-                    src="img/page_icon.png" width="24" alt="Home" class="ico"></a>
-                <a href="https://bitbucket.org/disco_unimib/lamapi/src/master/" target="_blank"><img
-                    src="img/document_icon.png" width="24" alt="Document" class="ico"></a>
-                <a href="https://bitbucket.org/disco_unimib/lamapi/src/master/" target="_blank"><img
-                    src="img/github_icon.png" width="24" alt="GitHub" class="ico"></a>
-                <a href="https://opensource.org/licenses/Apache-2.0" target="_blank"><img
-                    src="https://img.shields.io/badge/license-Apache2.0-blue" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-5-yellow" alt="TRL"></a>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <hr>
-
-        <div style="border-left: 6px solid #4400aa; margin-left: -3px; top: 0;">
-          <div class="list">
-            <p
-              style="text-orientation: upright; color: #4400aa; margin-left: 10px; font-weight:bold; font-size: xx-large; font-weight: 500;">
-              ScalR</p>
-            <div class="description">
-              <p><b>ScalR</b> provides infrastructure components for executing cleaning, transformation and linking at
-                large scale. ScalR provides horizontal scalability of data enrichment pipelines using software
-                containers, and support for management of the different procedures associated with the execution of
-                data enrichment pipelines flexibly on heterogeneous computing infrastructures. ScalR provides
-                integrated support for specific data enrichment operations in the form of a pipeline through the
-                development of reusable standard templates for setting up such pipelines. ScalR promote the reuse
-                and modification of existing data enrichment pipelines by exposing them as an integrated deployable
-                unit, as opposed to ad-hoc, non-reusable pieces of code.</p>
-            </div>
-            <article class="item">
-              <h4 class="title">TAO</h4>
-              <div class="description">
-                <p>TAO (stands for Tool Augmentation by user enhancements and Orchestration) is an open source,
-                  lightweight, generic, extensible and distributed orchestration framework. It allows to reuse (i.e.
-                  integrate) commonly used toolboxes.</p>
-                <br>
-                <a href="https://github.com/tao-org" target="_blank"><img src="img/page_icon.png" width="24" alt="Home"
-                    class="ico"></a>
-                <a href="https://github.com/tao-org" target="_blank"><img src="img/document_icon.png" width="24"
-                    alt="Document" class="ico"></a>
-                <a href="https://github.com/tao-org" target="_blank"><img src="img/github_icon.png" width="24"
-                    alt="GitHub" class="ico"></a>
-                <a href="https://opensource.org/licenses/GPL-3.0" target="_blank"><img
-                    src="https://img.shields.io/badge/license-GPL3.0-yellow" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-7-blue" alt="TRL"></a>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <hr>
-
-        <div style="border-left: 6px solid #4400aa; margin-left: -3px; top: 0;">
-          <div class="list">
-            <p
-              style="text-orientation: upright; color: #4400aa; margin-left: 10px; font-weight:bold; font-size: xx-large; font-weight: 500;">
-              ReusR</p>
-            <div class="description">
-              <p><b>ReusR</b> provides infrastructure components for search and recommendation of assets (e.g.,
-                datasets,
-                transformations, etc.) related to setting up and running data enrichment pipelines. It provides user
-                login to data management assets, public/private access to assets and editing, sharing and versioning
-                them. ReusR enables users of the enRichMyData toolkit to edit pipelines and promotes their reuse
-                across use cases.</p>
-            </div>
-            <article class="item">
-              <h4 class="title">TAO</h4>
-              <div class="description">
-                <p>TAO (stands for Tool Augmentation by user enhancements and Orchestration) is an open source,
-                  lightweight, generic, extensible and distributed orchestration framework. It allows to reuse (i.e.
-                  integrate) commonly used toolboxes.</p>
-                <br>
-                <a href="https://github.com/tao-org" target="_blank"><img src="img/page_icon.png" width="24" alt="Home"
-                    class="ico"></a>
-                <a href="https://github.com/tao-org" target="_blank"><img src="img/document_icon.png" width="24"
-                    alt="Document" class="ico"></a>
-                <a href="https://github.com/tao-org" target="_blank"><img src="img/github_icon.png" width="24"
-                    alt="GitHub" class="ico"></a>
-                <a href="https://opensource.org/licenses/GPL-3.0" target="_blank"><img
-                    src="https://img.shields.io/badge/license-GPL3.0-yellow" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-7-blue" alt="TRL"></a>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <hr>
-
-        <div style="border-left: 6px solid #4400aa; margin-left: -3px; top: 0;">
-          <div class="list">
-            <p
-              style="text-orientation: upright; color: #4400aa; margin-left: 10px; font-weight:bold; font-size: xx-large; font-weight: 500;">
-              StreamR</p>
-            <div class="description">
-              <p><b>StreamR</b> provides infrastructure components for streaming support in data enrichment pipelines.
-                It pipes data streams from/to appropriate endpoints and ensures high throughput, providing a
-                configurable set of tools for setting up custom streams for new applications.</p>
-            </div>
-            <article class="item">
-              <h4 class="title">Event Registry</h4>
-              <div class="description">
-                <p>Event Registry provides a UI and an API for media monitoring and media intelligence based on AI
-                  algorithms that constinuously analyse and group news articles.</p>
-                <br><br>
-                <a href="https://newsapi.ai" target="_blank"><img src="img/page_icon.png" width="24" alt="Home"
-                    class="ico"></a>
-                <a href="https://newsapi.ai" target="_blank"><img src="img/document_icon.png" width="24" alt="Document"
-                    class="ico"></a>
-                <a href="https://github.com/EventRegistry" target="_blank"><img src="img/github_icon.png" width="24"
-                    alt="GitHub" class="ico"></a>
-                <img src="https://img.shields.io/badge/license-proprietary-red" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-7-blue" alt="TRL"></a>
-              </div>
-            </article>
-            <article class="item">
-              <h4 class="title">StreamStory</h4>
-              <div class="description">
-                <p>StreamStory is a tool and service that ingests both sensor data and other timeseries. It
-                  automatically fuses and organizes it into a hierarchy with states and transitions between states.</p>
-                <br>
-                <a href="http://atena.ijs.si:8080" target="_blank"><img src="img/page_icon.png" width="24" alt="Home"
-                    class="ico"></a>
-                <a href="https://github.com/E3-JSI/StreamStory2/blob/main/services/modelling/docs/modelling.md" target="_blank"><img src="img/document_icon.png" width="24"
-                    alt="Document" class="ico"></a>
-                <a href="https://github.com/E3-JSI/StreamStory2" target="_blank"><img src="img/github_icon.png"
-                    width="24" alt="GitHub" class="ico"></a>
-                <img src="https://img.shields.io/badge/license-proprietary-red" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-4-yellow" alt="TRL"></a>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <hr>
-
-        <div style="border-left: 6px solid #4400aa; margin-left: -3px; top: 0;">
-          <div class="list">
-            <p
-              style="text-orientation: upright; color: #4400aa; margin-left: 10px; font-weight:bold; font-size: xx-large; font-weight: 500;">
-              GreenR</p>
-            <div class="description">
-              <p><b>GreenR</b> provides infrastructure components to support monitoring of data enrichment pipelines
-                in terms of their environmental impact. It monitors the carbon footprint of the various components in
-                the pipeline and provides the results to the use through a dashboard to log and modulate the
-                environmental impact due to the heavy computations within the pipelines.</p>
-            </div>
-            <article class="item">
-              <h4 class="title">Carbontracker</h4>
-              <div class="description">
-                <p>Carbontracker is a tool for tracking and predicting the energy consumption and carbon footprint of
-                  training deep learning models.</p>
-                <br><br>
-                <a href="https://github.com/lfwa/carbontracker/" target="_blank"><img src="img/page_icon.png" width="24"
-                    alt="Home" class="ico"></a>
-                <a href="https://github.com/lfwa/carbontracker/" target="_blank"><img src="img/document_icon.png"
-                    width="24" alt="Document" class="ico"></a>
-                <a href="https://github.com/lfwa/carbontracker/" target="_blank"><img src="img/github_icon.png"
-                    width="24" alt="GitHub" class="ico"></a>
-                <a href="https://opensource.org/licenses/MIT" target="_blank"><img
-                    src="https://img.shields.io/badge/license-MIT-blue" alt="License"></a>
-                <a href="https://euraxess.ec.europa.eu/career-development/researchers/manual-scientific-entrepreneurship/major-steps/trl"
-                  target="_blank"><img src="https://img.shields.io/badge/TRL-5-yellow" alt="TRL"></a>
-              </div>
-            </article>
-          </div>
-        </div>
-
+        
+        <p>enRichMyData features <strong>loosely coupled but interoperable tools and services</strong> designed to handle complex data enrichment scenarios, where <strong>tools and services can be combined and customized as needed</strong>.</p>
       </div>
     </section>
 
-    <div style="margin-bottom: 1em;"></div>
+    <section id="discoverr" class="tool-section">
+      <div class="tool-header">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <i class="fas fa-search-plus"></i>
+        <h2>DiscoverR</h2>
+      </div>
+      
+      <div class="tool-description">
+        <p><strong>DiscoverR</strong> assists users in searching datasets, ontologies, and enrichment services and provides insights on their content to support their use in enrichment pipeline. The user can search for keywords over descriptions of catalogued datasets/ontologies/services, or browse specific descriptions from a visual interface. It offers semantic data profiling techniques to enrich basic descriptions based on metadata with ontology usage patterns and statistics, boosting FAIR principles.</p>
+      </div>
+      
+      <div class="tool-cards">
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>ABSTAT</h3>
+            <div class="trl">
+              <span class="trl-badge trl-6">TRL 6</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>Scalable data profiling tool for RDF data (knowledge graphs) based on: 1) pattern extraction (class - predicate - class), possibly with the support of the data ontology; 2) calculation of different statistics.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="http://abstat.disco.unimib.it" target="_blank" class="icon-link" title="Homepage">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://bitbucket.org/disco_unimib/abstat/src/master/" target="_blank" class="icon-link" title="Repository">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge gpl3">GPL 3.0</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>SemTUI</h3>
+            <div class="trl">
+              <span class="trl-badge trl-4">TRL 4</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>Table reconciliation and extension service: Semantic annotation of tabular data by external services. Entity reconciliation and linking. Table extension extracting data from external datasets and Knowledge Graphs.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://i2tunimib.github.io/I2T-docs/" target="_blank" class="icon-link" title="Homepage">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://i2tunimib.github.io/I2T-docs/" target="_blank" class="icon-link" title="Documentation">
+                <i class="fas fa-book"></i>
+              </a>
+              <a href="https://github.com/I2Tunimib" target="_blank" class="icon-link" title="Repository">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge apache2">Apache 2.0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="wrappr" class="tool-section">
+      <div class="tool-header">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <i class="fas fa-box-open"></i>
+        <h2>WrappR</h2>
+      </div>
+      
+      <div class="tool-description">
+        <p><strong>WrappR</strong> provides data access using a virtual semantic layer and ensures secure access. WrappR is delivered as a semantic graph database with efficient reasoning, cluster and external index synchronization support. It provides a variety of different type of APIs and access methods as well as different types of data federation and virtualization. Through semantic data access and integration, WrappR provides a practical, robust and versatile tool to improve access to data.</p>
+      </div>
+      
+      <div class="tool-cards">
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>Ontotext GraphDB</h3>
+            <div class="trl">
+              <span class="trl-badge trl-8">TRL 8</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>Ontotext GraphDB is a highly efficient and robust graph database with RDF and SPARQL support. It supports a number of plugins and connectors such as MongoDB connector for JSON store access, JDBC for exposing RDF as a virtual relational DB, ONTOP for virtual sparql access.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://graphdb.ontotext.com/" target="_blank" class="icon-link" title="Homepage">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://graphdb.ontotext.com/documentation/10.1/" target="_blank" class="icon-link" title="Documentation">
+                <i class="fas fa-book"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge proprietary">Proprietary</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>Ontotext Semantic Objects</h3>
+            <div class="trl">
+              <span class="trl-badge trl-7">TRL 7</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>The Semantic Objects are a declaratively configurable service for querying and mutating knowledge graphs which automatically transpiles GraphQL queries and mutations into optimized SPARQL queries.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://platform.ontotext.com/semantic-objects/" target="_blank" class="icon-link" title="Homepage">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://platform.ontotext.com/semantic-objects/" target="_blank" class="icon-link" title="Documentation">
+                <i class="fas fa-book"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge proprietary">Proprietary</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>Ontotext Semantic Search</h3>
+            <div class="trl">
+              <span class="trl-badge trl-7">TRL 7</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>The Semantic Search provides a way to index the data from GraphDB in Elasticsearch and run queries against it.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://platform.ontotext.com/semantic-search/" target="_blank" class="icon-link" title="Homepage">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://platform.ontotext.com/semantic-search/" target="_blank" class="icon-link" title="Documentation">
+                <i class="fas fa-book"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge proprietary">Proprietary</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cleanr" class="tool-section">
+      <div class="tool-header">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <i class="fas fa-broom"></i>
+        <h2>CleanR</h2>
+      </div>
+      
+      <div class="tool-description">
+        <p><strong>CleanR</strong> supports the specification of data manipulation transformations, including data cleaning operations and the generation of knowledge graphs from various data formats. Users specify transformations interactively from a user interface, while specifications will be stored in a machine-readable format to be replicated and reused. CleanR provides a broad set of AI-enabled data transformations and integrates them with generic linking and extension functionalities provided by the ResourcR.</p>
+      </div>
+      
+      <div class="tool-cards">
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>Ontotext Refine</h3>
+            <div class="trl">
+              <span class="trl-badge trl-8">TRL 8</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>Ontotext Refine (OntoRefine) is a free application for automating the conversion of messy string data into a knowledge graph.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://www.ontotext.com/products/ontotext-refine/" target="_blank" class="icon-link" title="Homepage">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://platform.ontotext.com/ontorefine/" target="_blank" class="icon-link" title="Documentation">
+                <i class="fas fa-book"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge proprietary">Proprietary</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>RMLMapper</h3>
+            <div class="trl">
+              <span class="trl-badge trl-7">TRL 7</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>RMLMapper executes RDF Mapping Language (RML) rules to generate Linked Data from multiple originally (semi-)structured data sources.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://github.com/RMLio/rmlmapper-java" target="_blank" class="icon-link" title="Homepage">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://github.com/RMLio/rmlmapper-java" target="_blank" class="icon-link" title="Documentation">
+                <i class="fas fa-book"></i>
+              </a>
+              <a href="https://github.com/RMLio/rmlmapper-java" target="_blank" class="icon-link" title="Repository">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge mit">MIT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="linkr" class="tool-section">
+      <div class="tool-header">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <i class="fas fa-link"></i>
+        <h2>LinkR</h2>
+      </div>
+      
+      <div class="tool-description">
+        <p><strong>LinkR</strong> provides capabilities for semantic annotation of structured and semi-structured data using reference knowledge graphs and category schemes. Annotations consist of links from elements of the input data to elements of well-established knowledge bases and ontologies, or user defined knowledge graphs made available through the ResourcR. LinkR supports annotations through intelligent ML algorithms recommending annotations and a human-in-the-loop approach.</p>
+      </div>
+      
+      <div class="tool-cards">
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>SemTUI</h3>
+            <div class="trl">
+              <span class="trl-badge trl-4">TRL 4</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>Table reconciliation and extension services: semantic annotation of tabular data using external services. The UI supports entity linking and schema annotations to support full-fledge mapping, and specification of data extension operations using external datasets and Knowledge Graphs.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://i2tunimib.github.io/I2T-docs/" target="_blank" class="icon-link" title="Homepage">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://i2tunimib.github.io/I2T-docs/" target="_blank" class="icon-link" title="Documentation">
+                <i class="fas fa-book"></i>
+              </a>
+              <a href="https://github.com/I2Tunimib" target="_blank" class="icon-link" title="Repository">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge apache2">Apache 2.0</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>selBat</h3>
+            <div class="trl">
+              <span class="trl-badge trl-5">TRL 5</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>Table interpretation service: Semantic annotation of tabular data by an unsupervised approach based on heuristic. Schema types and properties, entity reconciliation and linking. Target Knowledge Graph: Wikidata.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://bitbucket.org/disco_unimib/selbat/src/master/" target="_blank" class="icon-link" title="Homepage">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://bitbucket.org/disco_unimib/selbat/src/master/" target="_blank" class="icon-link" title="Documentation">
+                <i class="fas fa-book"></i>
+              </a>
+              <a href="https://bitbucket.org/disco_unimib/selbat/src/master/" target="_blank" class="icon-link" title="Repository">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge apache2">Apache 2.0</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>Ontotext Refine</h3>
+            <div class="trl">
+              <span class="trl-badge trl-8">TRL 8</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>Ontotext Refine (OntoRefine) is a free application for automating the conversion of messy string data into a knowledge graph. It allows reconciliation against any endpoint supporting the reconcile API protocol.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://www.ontotext.com/products/ontotext-refine/" target="_blank" class="icon-link" title="Homepage">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://platform.ontotext.com/ontorefine/" target="_blank" class="icon-link" title="Documentation">
+                <i class="fas fa-book"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge proprietary">Proprietary</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>Ontotext Reconciliation</h3>
+            <div class="trl">
+              <span class="trl-badge trl-5">TRL 5</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>Ontotext reconciliation generates a reconciliation API endpoint on top of an RDF knowledge graph.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://www.ontotext.com/knowledgehub/videos/kgf21-talks-reconciliation-server-demonstration-against-wikidata/" target="_blank" class="icon-link" title="Homepage">
+                <i class="fas fa-home"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge proprietary">Proprietary</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="structr" class="tool-section">
+      <div class="tool-header">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <i class="fas fa-file-alt"></i>
+        <h2>StructR</h2>
+      </div>
+      
+      <div class="tool-description">
+        <p><strong>StructR</strong> is the counterpart of LinkR for unstructured data. It generates structured data from the unstructured input text through semantic annotation, linking and extension. The text is processed by linguistic and semantic tools and concept mentions are identified and disambiguated from context. Extension with custom annotation services is supported through a labeling interface for creating and editing text annotations.</p>
+      </div>
+      
+      <div class="tool-cards">
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>Wikifier</h3>
+            <div class="trl">
+              <span class="trl-badge trl-8">TRL 9</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>The JSI Wikifier is a web service that takes a text document as input and annotates it with links to relevant Wikipedia concepts (entities).</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://wikifier.org/info.html" target="_blank" class="icon-link" title="Homepage">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://wikifier.org/info.html" target="_blank" class="icon-link" title="Documentation">
+                <i class="fas fa-book"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge proprietary">Proprietary</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>Expert AI Platform Document Analyser</h3>
+            <div class="trl">
+              <span class="trl-badge trl-8">TRL 9</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>With the Natural Language API's document analysis capabilities, you can perform deep linguistic analysis, keyphrase extraction, named entity recognition, relation extraction and sentiment analysis.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://try.expert.ai/document-analysis" target="_blank" class="icon-link" title="Homepage">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://try.expert.ai/document-analysis" target="_blank" class="icon-link" title="Documentation">
+                <i class="fas fa-book"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge proprietary">Proprietary</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>Event Registry Relation Classifier</h3>
+            <div class="trl">
+              <span class="trl-badge trl-8">TRL 9</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>The Event Registry Relation Classifier.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://eventregistry.org/" target="_blank" class="icon-link" title="Homepage">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://eventregistry.org/" target="_blank" class="icon-link" title="Documentation">
+                <i class="fas fa-book"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge proprietary">Proprietary</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="infrastructure" class="tool-section">
+      <div class="tool-header">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <i class="fas fa-server"></i>
+        <h2>Infrastructure Services</h2>
+      </div>
+      
+      <div class="tool-description">
+        <p><strong>Infrastructure Services</strong> provide non-functional capabilities needed to support the effective deployment and execution of pipelines. These services enable scaling, reuse, streaming, and environmental impact monitoring of data enrichment processes.</p>
+      </div>
+      
+      <div class="tool-cards">
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>ResourcR</h3>
+            <div class="trl">
+              <span class="trl-badge trl-5">TRL 5</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>Provides infrastructure components to support the creation of linking services for a given dataset from a data provider as well as access mechanisms such as search and query. Enables performant linking and search functionalities with limited effort.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://bitbucket.org/disco_unimib/lamapi/src/master/" target="_blank" class="icon-link" title="LamAPI">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge apache2">Apache 2.0</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>ScalR</h3>
+            <div class="trl">
+              <span class="trl-badge trl-7">TRL 7</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>Provides infrastructure components for executing cleaning, transformation and linking at large scale using software containers. Supports management of data enrichment pipelines on heterogeneous computing infrastructures.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://github.com/tao-org" target="_blank" class="icon-link" title="TAO">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge gpl3">GPL 3.0</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>StreamR</h3>
+            <div class="trl">
+              <span class="trl-badge trl-7">TRL 7</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>Provides infrastructure components for streaming support in data enrichment pipelines. Pipes data streams from/to appropriate endpoints ensuring high throughput for setting up custom streams for new applications.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://newsapi.ai" target="_blank" class="icon-link" title="Event Registry">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://github.com/E3-JSI/StreamStory2" target="_blank" class="icon-link" title="StreamStory">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge proprietary">Proprietary</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>GreenR</h3>
+            <div class="trl">
+              <span class="trl-badge trl-5">TRL 5</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>Provides infrastructure components to support monitoring of data enrichment pipelines in terms of their environmental impact. Monitors the carbon footprint of pipeline components.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://github.com/lfwa/carbontracker/" target="_blank" class="icon-link" title="Carbontracker">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge mit">MIT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 enRichMyData Toolbox</p>
+    </div>
+  </footer>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>
