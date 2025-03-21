@@ -1,3 +1,33 @@
+// Mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const closeMenuButton = document.querySelector('.close-menu');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+  
+  if (mobileMenuButton && mobileMenu && closeMenuButton) {
+    // Open mobile menu
+    mobileMenuButton.addEventListener('click', function() {
+      mobileMenu.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    });
+    
+    // Close mobile menu
+    closeMenuButton.addEventListener('click', function() {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = ''; // Restore scrolling
+    });
+    
+    // Close menu when clicking a link
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+      });
+    });
+  }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     // Add TRL level tooltips
     const trlBadges = document.querySelectorAll('.trl-badge');

@@ -181,17 +181,38 @@ header .logo-container {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+/* Logo blinking/pulsing animation */
+@keyframes logoPulse {
+  0% {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 1)) 
+            drop-shadow(0 0 30px rgba(106, 27, 154, 0.5));
+    transform: scale(1.03);
+  }
+  100% {
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7));
+    transform: scale(1);
+  }
+}
+
+/* Apply the animation to the logo */
 header .logo {
   max-width: 220px;
   height: auto;
   display: block;
-  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.9));
+  animation: logoPulse 1s infinite ease-in-out;
   transition: filter var(--transition-normal), transform var(--transition-normal);
 }
 
+/* Add an extra effect on hover */
 header .logo:hover {
-  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 1));
-  transform: scale(1.03);
+  animation-play-state: paused;
+  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 1)) 
+          drop-shadow(0 0 40px rgba(106, 27, 154, 0.7));
+  transform: scale(1.05);
 }
 
 header h1 {
@@ -202,29 +223,86 @@ header h1 {
   letter-spacing: 1px;
 }
 
+/* Enhanced navigation styling with larger font */
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
   flex-wrap: wrap;
+  padding: var(--spacing-xs) 0;
 }
 
 nav li {
-  margin-right: var(--spacing-md);
+  margin: 0 var(--spacing-sm);
+  padding: var(--spacing-xs) 0;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: 500;
-  padding: var(--spacing-xs) var(--spacing-sm);
+  font-weight: 600; /* Slightly bolder */
+  font-size: 1.5rem; /* Larger font size */
+  padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--radius-sm);
-  transition: background-color var(--transition-fast);
+  transition: all var(--transition-fast);
+  display: inline-block;
+  letter-spacing: 0.5px; /* Better letter spacing */
+  position: relative;
+  overflow: hidden;
 }
 
+/* Add hover effect with background */
 nav a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
   text-decoration: none;
+  color: white;
+}
+
+/* Add active state for current section */
+nav a.active, 
+nav a:active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Add a subtle indicator under the active link */
+nav a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: all var(--transition-normal);
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+nav a:hover:after {
+  width: 80%;
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav li {
+    margin: var(--spacing-xs) 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  nav a {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 1.05rem;
+  }
 }
 
 /* Tool sections */
@@ -1384,5 +1462,104 @@ h2:after {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
     width: 100%;
+  }
+}
+
+/* Mobile navigation adjustments */
+@media (max-width: 767px) {
+  /* Hide the standard navigation bar on small screens */
+  .header-bottom {
+    display: none;
+  }
+  
+  /* Add a mobile menu button */
+  .mobile-menu-button {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+  
+  .mobile-menu-button:hover {
+    background-color: var(--primary-light);
+    transform: scale(1.05);
+  }
+  
+  /* Mobile menu overlay */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(106, 27, 154, 0.95);
+    z-index: 999;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-xl);
+  }
+  
+  .mobile-menu.active {
+    display: flex;
+  }
+  
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .mobile-menu li {
+    margin: var(--spacing-md) 0;
+  }
+  
+  .mobile-menu a {
+    color: white;
+    font-size: 1.8rem;
+    text-decoration: none;
+    display: block;
+    padding: var(--spacing-md);
+    transition: all var(--transition-fast);
+  }
+  
+  .mobile-menu a:hover {
+    transform: translateX(5px);
+    text-decoration: none;
+  }
+  
+  .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+}
+
+/* Make sure standard navigation is visible on larger screens */
+@media (min-width: 768px) {
+  .mobile-menu-button,
+  .mobile-menu {
+    display: none;
+  }
+  
+  .header-bottom {
+    display: block;
   }
 }
