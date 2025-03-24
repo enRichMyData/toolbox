@@ -1,3 +1,114 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('header');
+  const main = document.querySelector('main');
+  
+  // Function to adjust main padding based on header height
+  function adjustMainPadding() {
+    if (header && main) {
+      const headerHeight = header.offsetHeight;
+      main.style.paddingTop = (headerHeight + 20) + 'px'; // Add a small buffer
+    }
+  }
+  
+  // Initial adjustment
+  adjustMainPadding();
+  
+  // Re-adjust on window resize
+  window.addEventListener('resize', adjustMainPadding);
+  
+  // Re-adjust after page fully loads (for images etc.)
+  window.addEventListener('load', adjustMainPadding);
+  
+  // If we have a compact header transition, adjust on scroll too
+  window.addEventListener('scroll', function() {
+    // Delay the adjustment slightly to let transitions complete
+    setTimeout(adjustMainPadding, 300);
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Header scroll handler
+  const header = document.querySelector('header');
+  const mainContent = document.querySelector('main');
+  const overviewSection = document.getElementById('overview');
+  
+  window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const overviewOffset = overviewSection ? overviewSection.offsetTop : 300;
+    
+    if (scrollPosition > overviewOffset - 100) {
+      header.classList.add('header-compact');
+      document.body.classList.add('header-is-compact'); // Fallback for browsers without :has support
+    } else {
+      header.classList.remove('header-compact');
+      document.body.classList.remove('header-is-compact');
+    }
+  });
+  
+  // Fix any hash link jumps that might hide content
+  if (window.location.hash) {
+    setTimeout(function() {
+      const targetElement = document.querySelector(window.location.hash);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 120,
+          behavior: 'smooth'
+        });
+      }
+    }, 100);
+  }
+});
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('header');
+  const headerTop = document.querySelector('.header-top');
+  const headerLogo = document.querySelector('.logo');
+  const headerTitle = document.querySelector('header h1');
+  const logoContainer = document.querySelector('.logo-container');
+  const overviewSection = document.getElementById('overview');
+  
+  // Mobile menu functionality
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const closeMenuButton = document.querySelector('.close-menu');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+  
+  if (mobileMenuButton && mobileMenu && closeMenuButton) {
+    // Open mobile menu
+    mobileMenuButton.addEventListener('click', function() {
+      mobileMenu.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    });
+    
+    // Close mobile menu
+    closeMenuButton.addEventListener('click', function() {
+      mobileMenu.classList.remove('active');
+      document.body.style.overflow = ''; // Restore scrolling
+    });
+    
+    // Close menu when clicking a link
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+      });
+    });
+  }
+  
+  // Add scroll event listener for header transformation
+  if (header && overviewSection) {
+    window.addEventListener('scroll', function() {
+      const scrollPosition = window.scrollY;
+      const overviewOffset = overviewSection.offsetTop;
+      
+      // When user scrolls past overview section, transform header
+      if (scrollPosition > overviewOffset - 100) {
+        header.classList.add('header-compact');
+      } else {
+        header.classList.remove('header-compact');
+      }
+    });
+  }
+});
 // Mobile menu functionality
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuButton = document.querySelector('.mobile-menu-button');
