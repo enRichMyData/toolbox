@@ -127,13 +127,14 @@
             <div class="featured-title">
               <h3>SemT-UI</h3>
               <div class="featured-trl">
-                <span class="trl-badge trl-4">TRL 4</span>
+                <span class="trl-badge trl-8">TRL 8</span>
               </div>
             </div>
           </div>
           
           <div class="featured-card-body">
-            <p>Transform your tabular data with AI-powered semantic annotation. SemT-UI provides intelligent entity reconciliation, linking, and table extension using external Knowledge Graphs.</p>
+            <p>Transform your tabular data with AI-powered semantic annotations. SemT-UI provides intelligent entity reconciliation, linking, 
+              and table extension services based on external Knowledge Bases.</p>
             
             <div class="featured-highlight">
               <i class="fas fa-star"></i>
@@ -189,10 +190,11 @@
           
           <div class="featured-card-body">
             <p>Enterprise-grade semantic graph database with powerful reasoning capabilities. Provides efficient data federation, virtualization, and multiple API access methods for robust data integration.</p>
+            <p>The experimental Talk To Your Graph (TTYG) feature allows the specification and deployment of a LLM chatbot on top of an arbitrary RDF knowledge graph. </p>
             
             <div class="featured-highlight">
               <i class="fas fa-graduation-cap"></i>
-              <span>Tutorial Available</span>
+              <span>Tutorial Available for TTYG</span>
             </div>
           </div>
           
@@ -261,14 +263,16 @@
         
         <div class="tool-card">
           <div class="card-header">
-            <h3>SemT-UI</h3>
+            <h3>SemT-X</h3>
             <div class="trl">
-              <span class="trl-badge trl-4">TRL 4</span>
+              <span class="trl-badge trl-8">TRL 8</span>
             </div>
           </div>
           
           <div class="card-body">
-            <p>Table reconciliation and extension service: Semantic annotation of tabular data by external services. Entity reconciliation and linking. Table extension extracting data from external datasets and Knowledge Graphs.</p>
+            <p>Table reconciliation and extension services: Semantic enrichment of tabular data by external services accessible via browser or Web APIs. 
+              Entity reconciliation and linking to shared Knowledge Bases and Knowledge Graphs. 
+              Table extension extracting data from external datasets and Knowledge Graphs.</p>
           </div>
           
           <div class="card-footer">
@@ -300,20 +304,20 @@
       </div>
       
       <div class="tool-description">
-        <p><strong>WrappR</strong> provides data access using a virtual semantic layer and ensures secure access. WrappR is delivered as a semantic graph database with efficient reasoning, cluster and external index synchronization support. It provides a variety of different type of APIs and access methods as well as different types of data federation and virtualization. Through semantic data access and integration, WrappR provides a practical, robust and versatile tool to improve access to data.</p>
+        <p><strong>WrappR</strong> provides data access using a virtual semantic layer and ensures secure access. WrappR is delivered as a semantic graph database with efficient reasoning, cluster and external index synchronization support. It provides a variety of different type of APIs and access methods as well as different types of data federation, virtualization and data interaction with large language models. Through semantic data access and integration, WrappR provides a practical, robust and versatile tool to improve access to data.</p>
       </div>
       
       <div class="tool-cards">
         <div class="tool-card">
           <div class="card-header">
-            <h3>Ontotext GraphDB</h3>
+            <h3>GraphDB</h3>
             <div class="trl">
               <span class="trl-badge trl-9">TRL 9</span>
             </div>
           </div>
           
           <div class="card-body">
-            <p>Ontotext GraphDB is a highly efficient and robust graph database with RDF and SPARQL support. It supports a number of plugins and connectors such as MongoDB connector for JSON store access, JDBC for exposing RDF as a virtual relational DB, ONTOP for virtual sparql access. Talk to your Graph for a chatbot interface on top of a RDF graph and a GraphQL layer for seamless data access for appliaction development.</p>
+            <p>Ontotext GraphDB is a highly efficient and robust graph database with RDF and SPARQL support. It supports a number of plugins and connectors such as MongoDB connector for JSON store access, JDBC for exposing RDF as a virtual relational DB, ONTOP for virtual sparql access. Talk to your Graph for a chatbot interface on top of a RDF graph and a GraphQL layer for seamless data access for application development.</p>
           </div>
           
           <div class="card-footer">
@@ -322,6 +326,57 @@
                 <i class="fas fa-home"></i>
               </a>
               <a href="https://graphdb.ontotext.com/documentation/" target="_blank" class="icon-link" title="Documentation">
+                <i class="fas fa-book"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge proprietary">Proprietary</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>Talk to Your Graph</h3>
+            <div class="trl">
+              <span class="trl-badge trl-9">TRL 6</span>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <p>Talk to Your Graph is a chatbot that allows you to converse with your data and extract factual information using natural language. The chatbot is an example of Graph Retrieval-Augmented Generation (Graph RAG), as it retrieves relevant information from a GraphDB knowledge graph in the form of triples and uses that information to generate informed responses. Talk to Your Graph provides the accuracy and depth of graph queries without requiring comprehensive understanding of SPARQL or other retrieval methods.</p>
+          </div>
+
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://graphdb.ontotext.com/documentation/11.0/talk-to-graph.html" target="_blank" class="icon-link" title="Documentation">
+                <i class="fas fa-book"></i>
+              </a>
+              <a href="https://github.com/Ontotext-AD/ttyg-client" target="_blank" class="icon-link" title="Client">
+                <i class="fab fa-github"></i>
+              </a>
+              <a href="https://github.com/enRichMyData/sn-ttyg-demo" target="_blank" class="icon-link" title="Demo with EMD data">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge proprietary">Proprietary</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>GraphQL in GraphDB</h3>
+            <div class="trl">
+              <span class="trl-badge trl-9">TRL 9</span>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <p>The tool Generates a GraphQL interface directly from OWL ontologies and SHACL shapes, enabling users to expose RDF data via GraphQL endpoints. It offers configurable schema generation options to tailor types, relationships, query/mutation support, and control over how ontological constructs map to GraphQL . Formerly called "Semantic Objects" the tool now is fully integrated with GraphDB, so once configured, the GraphQL endpoints are immediately available for querying from apps or GraphiQL consoles</p>
+          </div>
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://graphdb.ontotext.com/documentation/11.0/graphql.html" target="_blank" class="icon-link" title="Documentation">
                 <i class="fas fa-book"></i>
               </a>
             </div>
@@ -817,7 +872,7 @@
         
         <div class="tool-card">
           <div class="card-header">
-            <h3>StreamR</h3>
+            <h3>StreamR (StreamStory)</h3>
             <div class="trl">
               <span class="trl-badge trl-7">TRL 7</span>
             </div>
@@ -829,10 +884,37 @@
           
           <div class="card-footer">
             <div class="links">
-              <a href="https://newsapi.ai" target="_blank" class="icon-link" title="Event Registry">
+              <a href="https://github.com/E3-JSI/StreamStory2" target="_blank" class="icon-link" title="Stream Story">
                 <i class="fas fa-home"></i>
               </a>
               <a href="https://github.com/E3-JSI/StreamStory2" target="_blank" class="icon-link" title="StreamStory">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge proprietary">MIT License</span>
+            </div>
+          </div>
+        </div>
+
+          <div class="tool-card">
+          <div class="card-header">
+            <h3>StreamR (Time Series Explorer)</h3>
+            <div class="trl">
+              <span class="trl-badge trl-5">TRL 5</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>This tool is focused on data cleaning, de-noising, graph methods application. Implementation of descriptive statistics, filters, transition diagrams, visualizations and predictions are done for specific time series data.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://github.com/E3-JSI/gm-sequence-mining" target="_blank" class="icon-link" title="Time Series Explorer">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://github.com/E3-JSI/gm-sequence-mining" target="_blank" class="icon-link" title="Time Series Explorer">
                 <i class="fab fa-github"></i>
               </a>
             </div>
@@ -841,6 +923,34 @@
             </div>
           </div>
         </div>
+
+        <div class="tool-card">
+          <div class="card-header">
+            <h3>StreamR (Event Registry)</h3>
+            <div class="trl">
+              <span class="trl-badge trl-9">TRL 9</span>
+            </div>
+          </div>
+          
+          <div class="card-body">
+            <p>Event Registry is an AI-powered platform that continuously monitors and analyzes global news from over 100,000 sources in real time. It automatically detects, clusters, and categorizes news articles into structured events, enabling users to track emerging topics, trends, and developments across languages and regions.</p>
+          </div>
+          
+          <div class="card-footer">
+            <div class="links">
+              <a href="https://eventregistry.org" target="_blank" class="icon-link" title="Event Registry">
+                <i class="fas fa-home"></i>
+              </a>
+              <a href="https://github.com/EventRegistry" target="_blank" class="icon-link" title="Event Registry">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+            <div class="license">
+              <span class="license-badge proprietary">Proprietary/Commercial</span>
+            </div>
+          </div>
+        </div>
+
         
         <div class="tool-card">
           <div class="card-header">
