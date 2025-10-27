@@ -649,9 +649,14 @@ main {
 }
 
 /* TRL Badge colors */
-.trl-4, .trl-6 {
+.trl-4 {
   background-color: #ffc107;
   color: #212529;
+}
+
+.trl-6 {
+  background-color: #f57c00;
+  color: white;
 }
 
 .trl-5 {
